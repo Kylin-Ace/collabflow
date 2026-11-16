@@ -1,27 +1,22 @@
 # CollabFlow
 
-A clean, collaborative project-management dashboard built with Next.js, React, TypeScript, and Tailwind CSS. The sample workspace includes a project board, team navigation, issue search and status filters, a progress indicator, and a working create-issue flow.
+CollabFlow is a frontend issue-board prototype built with Next.js, React, TypeScript, and Tailwind CSS. Create an issue, find it using search or a status filter, then move it to Done to see project progress update.
+
+![CollabFlow issue board](docs/board.png)
 
 ## Run locally
 
+Use Node.js 24 and npm. The demo uses bundled data and requires no credentials.
+
 ```bash
-npm install
+git clone https://github.com/Kylin-Ace/collabflow.git
+cd collabflow
+npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [localhost:3000](http://localhost:3000). Select **New issue**, give it a title, and find it in the Todo column. Change its status to **Done** and watch the progress indicator update.
 
-## GitHub
+The board uses in-memory state. Changes reset on refresh. The prototype has no accounts, shared workspace, or database.
 
-This folder is a standalone repository. Create an empty GitHub repository, then run these commands from this directory:
-
-```bash
-git init
-git add .
-git commit -m "Build CollabFlow project management app"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/collabflow.git
-git push -u origin main
-```
-
-The current version is a front-end demo with local in-memory issue state. Add authentication and a database such as Supabase or PostgreSQL before using it for persistent team data.
+Run `npm run lint` and `npm run build` to verify the project. The board and issue state live in [src/app/page.tsx](src/app/page.tsx).
